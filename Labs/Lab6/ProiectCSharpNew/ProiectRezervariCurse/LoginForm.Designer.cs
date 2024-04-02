@@ -175,6 +175,7 @@ namespace ProiectRezervariCurse
             // 
             this.PasswordTextBox.Location = new System.Drawing.Point(769, 64);
             this.PasswordTextBox.Name = "PasswordTextBox";
+            this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(261, 38);
             this.PasswordTextBox.TabIndex = 1;
             // 

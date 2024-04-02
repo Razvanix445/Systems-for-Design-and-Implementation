@@ -10,13 +10,11 @@ namespace ProiectRezervariCurse
 {
     public partial class LoginForm : Form
     {
-        private static readonly IReservationManagerRepository reservationManagerRepository = new ReservationManagerDBRepository();
-        private static readonly IReservationRepository reservationRepository = new ReservationDBRepository();
-        private static readonly ITripRepository tripRepository = new TripDBRepository();
-        private static readonly Service service = new Service(reservationManagerRepository, reservationRepository, tripRepository);
+        private Service service;
         
-        public LoginForm()
+        public LoginForm(Service service)
         {
+            this.service = service;
             InitializeComponent();
         }
 

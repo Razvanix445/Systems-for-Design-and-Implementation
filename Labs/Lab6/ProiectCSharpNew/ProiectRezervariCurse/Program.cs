@@ -10,6 +10,8 @@ using log4net;
 using log4net.Config;
 using ProiectRezervariCurse.domain;
 using ProiectRezervariCurse.repository.database;
+using ProiectRezervariCurse.repository.interfaces;
+using ProiectRezervariCurse.service;
 
 /*
 Problema 4.
@@ -35,6 +37,10 @@ namespace ProiectRezervariCurse
     static class Program
     {
         private static readonly ILog log = LogManager.GetLogger(typeof(Program));
+        private static readonly IReservationManagerRepository reservationManagerRepository = new ReservationManagerDBRepository();
+        private static readonly IReservationRepository reservationRepository = new ReservationDBRepository();
+        private static readonly ITripRepository tripRepository = new TripDBRepository();
+        private static readonly Service service = new Service(reservationManagerRepository, reservationRepository, tripRepository);
         
         /// <summary>
         /// The main entry point for the application.
@@ -55,12 +61,12 @@ namespace ProiectRezervariCurse
                 log.Error("Test connection failed");
 
             //reservationManagerTesting();
-            tripTesting();
+            //tripTesting();
             //reservationTesting();
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new LoginForm(service));
         }
         
         private static void reservationManagerTesting()
