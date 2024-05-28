@@ -1,0 +1,55 @@
+* {
+    font-family: 'Comic Sans MS';
+}
+
+.TripApp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Comic Sans MS';
+}
+
+.TripApp-h1{
+    text-align: center;
+    font-family: 'Comic Sans MS';
+    font-size: large;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.TripApp-body{
+    align-content: center;
+}
+
+.TripTable {
+    text-align: center;
+    font-family: 'Comic Sans MS';
+    font-size: medium;
+    color: green;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.TripTable th, .TripTable td {
+    border: 1px solid #ddd;
+    padding: 0.8em;
+}
+
+.TripTable th {
+    background-color: #19461a;
+    color: white;
+}
+
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+}
